@@ -30,6 +30,23 @@ $("./body") {
 		}
 	}
 	
+	$(".//div[@class='ProductThumb']") {
+		add_class("ig_image")
+		$(".//script") {
+			remove()
+		}
+		$(".//div/a") {
+			$(".//") {
+				remove()
+			}
+		}
+		$(".//a[@id='ImageScrollNext']") {
+			remove()
+		}
+	}
+	
+	
+	
 	$$("#ProductDescription") {
 		attribute("data-ur-set", "toggler")
 		attribute("class","mw_menu_btn")
