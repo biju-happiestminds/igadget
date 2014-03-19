@@ -21,6 +21,15 @@ $("./body") {
 		add_class("ig_PrimaryProductDetails")
 	}
 	
+	$$("#ProductDetails") {
+		$(".//div/br") {
+			remove()
+		}
+		$(".//div/hr") {
+			remove()
+		}
+	}
+	
 	$$("#ProductDescription") {
 		attribute("data-ur-set", "toggler")
 		attribute("class","mw_menu_btn")
@@ -32,6 +41,6 @@ $("./body") {
 		}
 		$("./ProductDescriptionContainer") {
 			attribute("data-ur-toggler-component", "content")
-		}/**/
+		}
 	}
 }
