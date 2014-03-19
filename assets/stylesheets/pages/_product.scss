@@ -1,0 +1,107 @@
+.ig_details{
+	
+	.DetailRow{
+		display: inline-block;
+		width: 100%;
+		margin-bottom:5px;
+		height:30px;
+		border-radius: 10px;
+		background-color: #F0F0F0;
+		
+		.Label{
+			font-weight: bold;
+			padding-top:6px;
+			padding-left:10px;
+			font-size: 15px;
+			display:inline-block;
+		}
+		.Value{
+			font-weight: bold;
+			padding-top:6px;
+			font-size: 15px;
+			padding-left:10px;
+			display:inline-block;
+		}
+	}
+	
+	.productAttributeRow{
+		display: inline-block;
+		width: 100%;
+		margin-bottom:5px;
+		border-radius: 10px;
+		background-color: #F0F0F0;
+		
+		.productAttributeLabel{
+			padding:6px;
+			font-size: 15px;
+			display:inline-block;
+		}
+		.productAttributeValue{
+			padding:6px;
+			font-size: 15px;
+			display:inline-block;
+		}
+	}
+	.BulkDiscount{
+		float: right;
+		margin-top: -1px;
+		input{
+			float: right;
+			margin-top: -30px;
+		}
+	}
+	
+	.productAddToCart{
+		display: inline-block;
+		width: 100%;
+		margin-bottom:5px;
+		border-radius: 10px;
+		background-color: #787C80;
+	}
+	
+	#ProductDescription{
+		h3 {
+			min-height: 0px;
+			padding: 11px 10px 10px;
+			margin: 0px;
+			@extend .mw_bar1;
+		}
+		p{
+			padding: 0px 0 0;
+			background-color: #F5F2E1;
+			border-left: 1px solid #5f0f02;
+			border-right: 1px solid #5f0f02;
+			border-bottom: 1px solid #5f0f02;
+			overflow: hidden;
+		}
+		ul {
+			padding: 2px 0 0;
+			background-color: #F5F2E1;
+			border-left: 1px solid #5f0f02;
+			border-right: 1px solid #5f0f02;
+			border-bottom: 1px solid #5f0f02;
+			overflow: hidden;
+			li {
+				display: block;
+				width: 100%;
+				border-bottom: 1px solid #5f0f02;
+				a {
+					display: block;
+					padding: 11px 20px 9px;
+					color: #3D211A;
+					font-size: 13px;
+					font-weight: bold;
+				}
+				&:last-child {
+					padding-bottom: 3px;
+					overflow: hidden;
+					border-bottom: 0px none #000;
+				}
+			}
+		}
+	}
+	
+	div[data-ur-toggler-component="content"][data-ur-state="disabled"] {
+		display: none;
+	}
+}
