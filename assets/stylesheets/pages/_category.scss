@@ -29,9 +29,9 @@
       //@extend .sprites-ok;
       border-radius: $border_radius;
       select{
-        background: none;
+        /*background: none;*/
         border: none;
-        color: $background4;
+        color: $color1;
         font-size: 14px;
         vertical-align: middle;
         margin-left: 5px;
@@ -45,7 +45,6 @@
     }
   }
   .Left{
-    background: image-url("content_top.png") repeat-x 0 0;
     padding-top: 20px;
     > h2{
       margin-bottom: 15px;

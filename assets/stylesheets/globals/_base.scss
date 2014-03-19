@@ -24,7 +24,6 @@ textarea, input[type="text"], input[type="password"], select {
   border: $border2;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
-  padding: 8px;
   vertical-align: middle;
   margin: 0px 5px;
   -webkit-box-shadow: 0px 0px 0px #000;
@@ -124,7 +123,7 @@ hr {
           @extend .mw_btn1;
           position: absolute;
           bottom: 10px;
-          left: 140px;
+          right: 10px;
           height: 16px;
           padding: 9px 7px 5px 7px;
           margin: 0;
@@ -139,7 +138,6 @@ hr {
       }
     }
     .Content{
-      background: image-url("content_top.png") repeat-x 0 0;
       @include clearfix();
       padding: 15px 10px;
       h3 {

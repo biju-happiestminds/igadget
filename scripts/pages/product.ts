@@ -9,6 +9,13 @@ $("./body") {
 		remove()
 	}
 	
+	$(".//div[@id='ProductByCategory']") {
+		remove()
+	}
+	//ProductDetails
+	$(".//div[@id='ProductReviews']") {
+		remove()
+	}
 	
 	$(".//div[@class='Block Moveable Panel PrimaryProductDetails']") {
 		add_class("ig_PrimaryProductDetails")
@@ -25,6 +32,6 @@ $("./body") {
 		}
 		$("./ProductDescriptionContainer") {
 			attribute("data-ur-toggler-component", "content")
-		}
+		}/**/
 	}
 }

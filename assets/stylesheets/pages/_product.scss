@@ -47,7 +47,7 @@
 		margin-top: -1px;
 		input{
 			float: right;
-			margin-top: -30px;
+			margin-top: -20px;
 		}
 	}
 	
@@ -103,5 +103,13 @@
 	
 	div[data-ur-toggler-component="content"][data-ur-state="disabled"] {
 		display: none;
+	}
+	
+	.ProductDescriptionContainer {
+		margin-top: -5px;
+	}
+	
+	.productAttributeLabel {
+		vertical-align: top;
 	}
 }

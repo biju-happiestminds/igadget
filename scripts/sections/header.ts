@@ -34,7 +34,7 @@ $('./body') {
               wrap("div", class: "mw_search_btn buttons-search")
             }
             $("./input[@type='text']") {
-              attribute("placeholder", "Search…")
+              attribute("placeholder", "Search...")
             } 
           }     
         }

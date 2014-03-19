@@ -1,4 +1,3 @@
 $("./body") {
-  add_class("mw_home")
-    
+	add_class("mw_home")
 }
