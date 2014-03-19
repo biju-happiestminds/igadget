@@ -1,26 +1,26 @@
 // Reset file for standardizing the page
-// @import "globals/_reset";
+@import "globals/_reset";
 
-// Import Bourbon
-@import "globals/bourbon/_bourbon.scss";
+// Bourbon
+@import "globals/bourbon/_bourbon";
 
-
-// File for global Uranium stylings
-@import "globals/_uranium.scss";
-
-// Vertical rhythmic
-@import "globals/_vertical_rhythmic";
-
-// Site wide variables and libarary of mixins and classes
-@import "globals/_variables.scss";
-@import "globals/_lib.scss";
-
-// Import global base styles
+// Globals
+@import "globals/_variables";
+@import "globals/_lib";
 @import "globals/_base";
+@import "globals/_uranium";
+@import "globals/_buttons";
+@import "globals/_sprites";
 
 // Header & Footer
 @import "sections/_header";
 @import "sections/_footer";
 
-// Pages
+// // Pages
 @import "pages/_home";
+@import "pages/_category";
+@import "pages/_brands";
+@import "pages/_product";
+@import "pages/_cart";
+@import "pages/_checkout";
+@import "pages/_holiday_landing.scss";

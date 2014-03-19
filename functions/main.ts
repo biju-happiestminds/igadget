@@ -191,29 +191,6 @@
   add_mobile_javascript()
 }
 
-# Rewrite meta redirects
-@func XMLNode.rewrite_meta_refresh() {
-  $("/html/head/meta") {
-    %refresh_tag = fetch("@http-equiv")
-    match(normalize(%refresh_tag)) {
-      with(/refresh/i) {
-        attribute("content") {
-          value() {
-            replace(/(.*?;)(URL=)?(.*)/i) {
-              %timeout = $1
-              %prefix = $2
-              %url = $3
-              %url {
-                rewrite_link()
-              }
-              set(%timeout + %prefix + %url)
-            }
-          }
-        }
-      }
-    }
-  }
-}
 
 # Rewrite items
 @func XMLNode.rewrite_links() {
@@ -223,7 +200,7 @@
     $(".//a") {
       attribute("href") {
         value() {
-          rewrite_link()
+          rewrite("link")
         }
       }
     }
@@ -234,7 +211,7 @@
       }
       attribute("href") {
         value() {
-          rewrite_link()
+          rewrite("link")
         }
       }
     }
@@ -242,12 +219,11 @@
     $(".//form") {
       attribute("action") {
         value() {
-          rewrite_link()
+          rewrite("link")
         }
       }
     }
   }
-  rewrite_meta_refresh()
 }
 
 # Absolutize Items 
@@ -264,9 +240,7 @@
   $(".//img|.//script[@src]") {
     # GOTCHAS :: Watch out for captcha images, they most likely should
     # not be absolutized
-    $src = fetch("./@src") {
-			trim()
-		}
+    $src = fetch("./@src")
     match($rewriter_url) {
       not(/false/) {
         # Do nothing :: Use base tag value
@@ -276,10 +250,9 @@
       }
     }
     # skip URLs which: are empty, have a host (//www.example.com), or have a protocol (http:// or mailto:)
-    match($src, /\A(?![a-z]+\:)(?!\/\/)(?!\z)/) {
+    match($src, /^(?![a-z]+\:)(?!\/\/)(?!$)/) {
       attribute("src") {
         value() {
-					trim()
           match($src) {
             with(/^\//) {
               # host-relative URL: just add the host
@@ -314,14 +287,3 @@
   }
 }
 
-@func Text.inferred_content_type() {
-  $inferred_content_type = $content_type
-  match($x_requested_with, /XMLHttpRequest/) {
-    match($content_type, /html/) {
-      match(this(), /\A\s*(\[.*\]|{.*}|".*"|'.*'|\d+|true|false)\s*\Z/m) {
-        $inferred_content_type = "application/json"
-      }
-    }
-  }
-  $inferred_content_type
-}

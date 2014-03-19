@@ -1,6 +1,6 @@
 # The main file executed by Tritium. The start of all other files.
 
-match(inferred_content_type()) {
+match($content_type) {
   with(/html/) {
     replace(/fb:/, "fbn_") # Rewrite the xmlns facebook nodes before the html parser clobbers them
 
@@ -18,6 +18,6 @@ match(inferred_content_type()) {
   #   @import ajax.ts
   # }
   else() {
-    log("Passing through " + $content_type + " unmodified.")
+    log(concat("Passing through ", $content_type, " unmodified"))
   }
 }
